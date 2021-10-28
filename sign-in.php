@@ -32,8 +32,8 @@
             <div><button type="submit" class="btn d-block w-100 ">Đăng nhập</button></div>
             
             <div class="text-center Signup">
-                <a onclick="drd()" class="forgot" href="forgot.html">Quên mật khẩu ?</a><br>
-                <span>Bạn chưa có tài khoản ? <a id="Sign-up" onclick="drd()" href="sign-up.html">Đăng ký</a></span>
+                <a onclick="drd()" class="forgot" href="forgot.php">Quên mật khẩu ?</a><br>
+                <span>Bạn chưa có tài khoản ? <a id="Sign-up" onclick="drd()" href="sign-up.php">Đăng ký</a></span>
             </div>
         </div>
     </div>

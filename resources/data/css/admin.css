@@ -1,0 +1,40 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.left
+{
+    padding:30px 20px;
+    height:95vh;
+    margin: 20px 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #c401ff;
+
+}
+.alert
+{
+    border-radius: 40px;
+}
+.menu
+{
+    margin-top:60px
+}
+
+.right
+{
+    padding:30px 20px;
+    height:100vmax;
+    margin: 20px 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #e73881;
+}
+html
+{
+    overflow-x: hidden;
+}
+.table
+{
+    
+}
