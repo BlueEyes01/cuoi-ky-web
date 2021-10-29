@@ -17,7 +17,7 @@
         <div class="sign-in animate__animated animate__bounceInDown">
             <div class="row">
                 <div class="text-center">
-                    <img class="animate__animated animate__pulse animate__slow	2s animate__infinite	infinite"
+                    <img class="animate__animated animate__pulse animate__slow	 animate__infinite"
                         src="resources/img/book.png" width="200px">
                 </div>
                 <div class="col-6">

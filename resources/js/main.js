@@ -28,14 +28,14 @@ function add_invalid(x,message)
 function obl_tk(x)
 {
     remove_animate(x);
-    let reg = /^\w[a-zA-Z0-9\_]{0,15}$/;
+    let reg = /^\w[a-zA-Z0-9\_]{0,16}$/;
     (x.value.trim()==="")   ?     add_invalid(x,"Vui lòng nhập tên đăng nhập"):
     (!reg.test(x.value))    ?     add_invalid(x,"Tên đăng nhập không hợp lệ, tối đa 16 ký tự (có thể chứa chữ, số và ký tự _ )"): remove_invalid(x);
 }
 function obl_mk(x)
 {
     remove_animate(x);
-    let reg = /^\w[a-zA-Z0-9\_]{0,15}$/;
+    let reg = /^\w[a-zA-Z0-9\_]{0,16}$/;
     (x.value.trim()==="")   ?     add_invalid(x,"Vui lòng nhập mật khẩu"):
     (!reg.test(x.value))    ?     add_invalid(x,"Mật khẩu không hợp lệ, tối đa 16 ký tự (có thể chứa chữ, số và ký tự _ )"): remove_invalid(x);
 }

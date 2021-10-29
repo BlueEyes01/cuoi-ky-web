@@ -37,13 +37,14 @@ img {
 }
 .btn
 {
-    background-color: #f75151;
+    background-color: #f1434c;
     border-radius: 30px;
     border-radius: 30px;
     box-shadow: 0px 0px 5px var(--bs-blue);
     color: #fff;
     margin-bottom: 10px;
     margin-top:20px;
+    /* #3498db */
 }
 a{
     text-decoration: none;
