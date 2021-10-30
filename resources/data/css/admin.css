@@ -120,6 +120,7 @@ h5
     border-radius: 30px;
     box-shadow: 0 0 10px #c401ff;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 .btn-update
 {
@@ -130,4 +131,8 @@ h5
     color: #fff;
     margin-bottom: 10px;
     margin-top:20px;
+}
+.checkbox-mk
+{
+    margin-top:10px
 }

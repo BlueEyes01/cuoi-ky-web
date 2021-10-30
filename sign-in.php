@@ -14,6 +14,7 @@
 <body>
     <div class="all">
         <div class="sign-in  animate__animated animate__bounceInDown">
+            <form action = "resources/data/php/sign_in_submit.php" method = "POST">
             <div class="text-center">
                 <img class=" animate__animated animate__pulse animate__slow	2s animate__infinite	infinite"
                     src="resources/img/book.png" width="200px">
@@ -35,6 +36,8 @@
                 <a onclick="drd()" class="forgot" href="forgot.php">Quên mật khẩu ?</a><br>
                 <span>Bạn chưa có tài khoản ? <a id="Sign-up" onclick="drd()" href="sign-up.php">Đăng ký</a></span>
             </div>
+        </form>
+           
         </div>
     </div>
 

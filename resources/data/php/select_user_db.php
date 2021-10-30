@@ -33,7 +33,7 @@ echo'<table id = "table" class="table table-bordered border-danger">
             <td style='cursor:pointer'>${name}</td>
             <td style='cursor:pointer'>${phone}</td>
             <td style='cursor:pointer'>${email}</td>
-            <td> <button type='button' class='btn btn-outline-warning' disabled ><a style='text-decoration: none' href = 'update_user_db.php?username=$username'>Sửa</a></button>
+            <td> <button type='button' class='btn btn-outline-warning' disabled ><a style='text-decoration: none' href = 'update_user.php?username=$username'>Sửa</a></button>
 
             <button type='button' class='btn btn-outline-danger'disabled><a style='text-decoration: none' href = 'delete_user_db.php?username=$username'>Xóa</a></button></td>
             </tr>";

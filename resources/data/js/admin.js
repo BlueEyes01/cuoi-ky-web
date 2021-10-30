@@ -71,20 +71,11 @@ function login_admin()
         document.querySelector('.login').classList.remove('animate__shakeX');
     },1000)
 }
-document.querySelector('form').onsubmit =function(e)
-{
-        e.preventDefault();
-}
-// function onsm()
-// {
-//     x = document.querySelector('input[name = username]');
-//     y = document.querySelector('input[name = password]');
-//     obl_tk(x);
-//     obl_mk(y);
 
-//     let reg = /^\w[a-zA-Z0-9\_]{0,16}$/;
-//     if(x.value.trim()===""||y.value.trim()===""||!reg.test(x.value)||!reg.test(y.value))
-//     {
-//         login_admin();
-//     }
-// }
+function dplnone()
+{
+    x = document.querySelectorAll('.dplnone1');
+    console.log(x);
+    x[0].classList.toggle('dplnone');
+    x[1].classList.toggle('dplnone');
+}
