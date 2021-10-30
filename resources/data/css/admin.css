@@ -47,7 +47,7 @@ html
 }
 .login
 {
-    width: max-content;
+    width: 400px;
     padding:50px 20px;
     margin-left: auto;
     margin-right: auto;   
@@ -111,4 +111,23 @@ h5
 {
     background-color:#eb6666;
     
+}
+.update{
+    padding:50px 20px;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;   
+    border-radius: 30px;
+    box-shadow: 0 0 10px #c401ff;
+    margin-bottom: 50px;
+}
+.btn-update
+{
+    background-color: #642eac;
+    border-radius: 30px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px var(--bs-blue);
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top:20px;
 }

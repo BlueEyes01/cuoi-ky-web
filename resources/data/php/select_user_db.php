@@ -2,7 +2,7 @@
 echo'<table id = "table" class="table table-bordered border-danger">
       <thead>
         <tr>
-          <th scope="col">ID</th>
+          <th scope="col">STT</th>
           <th scope="col">User name</th>
           <th scope="col">Password</th>
           <th scope="col">Họ tên</th>
@@ -12,14 +12,14 @@ echo'<table id = "table" class="table table-bordered border-danger">
         </tr>
       </thead>';
       include("connectdb.php");
-      $sql = "SELECT * FROM user";
+      $sql = "SELECT @row := @row + 1 AS stt, t.* FROM user t, (SELECT @row := 0) r";
       $result = $conn->query($sql);
       if ($result->num_rows > 0) 
       {
       // output data of each row
         while($row = $result->fetch_assoc()) 
           {
-            $id = $row['id'];
+            $stt = $row['stt'];
             $username = $row['username'];
             $password = $row['password'];
             $name = $row['name'];
@@ -27,15 +27,15 @@ echo'<table id = "table" class="table table-bordered border-danger">
             $email = $row['email'];
 
             echo "<tr onclick = 'clr(this)'>
-            <td style='cursor:pointer'> ${id}</td>
+            <td style='cursor:pointer'> ${stt}</td>
             <td style='cursor:pointer'>${username}</td>
             <td style='cursor:pointer'>${password}</td>
             <td style='cursor:pointer'>${name}</td>
             <td style='cursor:pointer'>${phone}</td>
             <td style='cursor:pointer'>${email}</td>
-            <td ><button type='button' class='btn btn-outline-warning' disabled>Sửa</button>
-            <button type='button' class='btn btn-outline-danger'disabled>Xóa</button></td>
-            
+            <td> <button type='button' class='btn btn-outline-warning' disabled ><a style='text-decoration: none' href = 'update_user_db.php?username=$username'>Sửa</a></button>
+
+            <button type='button' class='btn btn-outline-danger'disabled><a style='text-decoration: none' href = 'delete_user_db.php?username=$username'>Xóa</a></button></td>
             </tr>";
           }
       } 
@@ -46,4 +46,4 @@ echo'<table id = "table" class="table table-bordered border-danger">
       echo "</table>";
       $conn->close();
 ?>
-  
+   

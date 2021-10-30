@@ -20,16 +20,16 @@
             </div>
             <div>
                 <h5>Tên đăng nhập</h5>
-                <input oninput="oip(this)" onblur="obl_tk(this)" onfocus="ofc(this)" class="form-control" type="text" placeholder="User name">
+                <input oninput="oip(this)" onblur="obl_tk(this)" onfocus="ofc(this)" name="username" class="form-control" type="text" placeholder="User name">
                 <span class="form-message"></span>
             </div>
             <div>
                 <h5>Mật khẩu</h5>
-                <input oninput="oip(this)" onblur="obl_mk(this)" onfocus="ofc(this)" class="form-control" type="password"
+                <input oninput="oip(this)" onblur="obl_mk(this)" name = "password" onfocus="ofc(this)" class="form-control" type="password"
                     placeholder="Password">
                     <span class="form-message"></span>
             </div>
-            <div><button type="submit" class="btn d-block w-100 ">Đăng nhập</button></div>
+            <div><button   type="submit" class="btn d-block w-100">Đăng nhập</button></div>
             
             <div class="text-center Signup">
                 <a onclick="drd()" class="forgot" href="forgot.php">Quên mật khẩu ?</a><br>

@@ -37,6 +37,10 @@ function obl_mk(x)
     (x.value.trim()==="")   ?     add_invalid(x,"Vui lòng nhập mật khẩu"):
     (!reg.test(x.value))    ?     add_invalid(x,"Mật khẩu không hợp lệ, tối đa 16 ký tự (có thể chứa chữ, số và ký tự _ )"): remove_invalid(x);
 }
+function oip(x)
+{
+    remove_invalid(x);
+}
 function ofc(x) {
     add_animate(x)
 }
@@ -67,3 +71,20 @@ function login_admin()
         document.querySelector('.login').classList.remove('animate__shakeX');
     },1000)
 }
+document.querySelector('form').onsubmit =function(e)
+{
+        e.preventDefault();
+}
+// function onsm()
+// {
+//     x = document.querySelector('input[name = username]');
+//     y = document.querySelector('input[name = password]');
+//     obl_tk(x);
+//     obl_mk(y);
+
+//     let reg = /^\w[a-zA-Z0-9\_]{0,16}$/;
+//     if(x.value.trim()===""||y.value.trim()===""||!reg.test(x.value)||!reg.test(y.value))
+//     {
+//         login_admin();
+//     }
+// }

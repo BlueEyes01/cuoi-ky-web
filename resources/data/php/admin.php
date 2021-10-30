@@ -67,29 +67,32 @@
                         <img class=" img1 animate__animated animate__pulse animate__slow	2s animate__infinite	infinite"
                             src="../..//img/book.png" width="200px">
                     </div>
-                    <div class="login animate__animated animate__backInRight">
-                        <h2 style="color : red">Đăng nhập nào admin</h2>
-                        <form action="">
-                            <div>
-                                <h5>Tên đăng nhập</h5>
-                                <input oninput="oip(this)" onblur="obl_tk(this)" onfocus="ofc(this)"
-                                    class="form-control" type="text" placeholder="User name">
-                                <span class="form-message"></span>
+                        <div class="login animate__animated animate__backInRight">
+                            <div class="text-center">
+                                <h2 style="color : red">Đăng nhập nào admin</h2>
                             </div>
 
-                            <div>
-                                <h5>Mật khẩu</h5>
-                                <input oninput="oip(this)" onblur="obl_mk(this)" onfocus="ofc(this)"
-                                    class="form-control" type="password" placeholder="Password">
-                                <span class="form-message"></span>
-                                <div><button id="btn-login" type="submit" class="btn d-block w-100 ">Đăng nhập</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="tb-login alert alert-danger text-right dplnone" role="alert">
-                        Tên đăng nhập hoặc mật khẩu không chính xác !
-                    </div>
+                                <form action="" method="post">
+                                    <div>
+                                        <h5>Tên đăng nhập</h5>
+                                        <input oninput="oip(this)" onblur="obl_tk(this)" onfocus="ofc(this)"
+                                            class="form-control" type="text" name="username" placeholder="User name">
+                                        <span class="form-message"></span>
+                                    </div>
+
+                                    <div>
+                                        <h5>Mật khẩu</h5>
+                                        <input oninput="oip(this)" onblur="obl_mk(this)" onfocus="ofc(this)"
+                                            name = password class="form-control" type="password" placeholder="Password">
+                                        <span class="form-message"></span>
+                                        <div><button id="btn-login" type="submit" name="submit"  class="btn d-block w-100 ">Đăng nhập</button>
+                                        </div>
+                                    </div>
+                                </form>
+                        </div>
+                        <div class="tb-login alert alert-danger text-right dplnone" role="alert">
+                            Tên đăng nhập hoặc mật khẩu không chính xác !
+                        </div>
                 </div>
             </div>
         </div>
