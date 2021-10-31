@@ -1,4 +1,5 @@
 <?php 
+
 echo'<table id = "table" class="table table-bordered border-danger">
       <thead>
         <tr>
@@ -12,7 +13,7 @@ echo'<table id = "table" class="table table-bordered border-danger">
         </tr>
       </thead>';
       include("connectdb.php");
-      $sql = "SELECT @row := @row + 1 AS stt, t.* FROM user t, (SELECT @row := 0) r";
+      $sql = "SELECT @row := @row + 1 AS stt, t.* FROM user t, (SELECT @row := 0) r WHERE level = 0 ";
       $result = $conn->query($sql);
       if ($result->num_rows > 0) 
       {

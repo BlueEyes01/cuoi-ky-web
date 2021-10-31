@@ -1,6 +1,7 @@
 <?php 
 
 include("connectdb.php");
+    session_start();
     $name = $_POST["name"];
     $phone = $_POST["phone"];
     $username = $_POST["username"];
@@ -32,6 +33,7 @@ include("connectdb.php");
         $old = mysqli_query($conn,$sql);
         if (mysqli_num_rows($old)!=0)
         {
+            $_SESSION['alert'] ='<script>alert("Tên đăng nhập đã tồn tại")</script>';
             header("Location:../../../sign-up.php");
         }
         else
@@ -39,11 +41,15 @@ include("connectdb.php");
             $password = md5($password);
             $sql = "INSERT INTO user VALUES ('$username', '$password', '$name', '$phone', '$email', 0)";
             mysqli_query($conn, $sql);
+            $_SESSION['alert'] ='<script>alert("Bạn đã đăng ký thành công")</script>';
+            header('Location:../../../sign-in.php');
+
         }
     }
     else 
     {
         header('Location:../../../sign-up.php');
     }
+    $conn->close();
 
 ?>

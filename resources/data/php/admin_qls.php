@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="vi">
+<?php
+       include 'header.php';
+?>
+<?php include"header.php"; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../vendors/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <title>Document</title>
-</head>
-
-<body>
     <div class="all">
         <div class="row">
             <div class="col-3">
@@ -50,26 +41,23 @@
                                         <h2 style="color:rgb(63, 230, 99)">Quản lý đơn hàng<h2>
                                     </div>
                                 </a>
-                            </li>     
+                            </li>   
+                            <li class="nav-item">
+                                <a class="nav-link active" id = "btn_qltk" aria-current="page" href="logout.php">
+                                    <div onmouseover="m_over(this)" onmouseout = "m_out(this)" class="alert alert-info animate__animated animate__pulse animate__repeat-2 animate__slow" role="alert">
+                                        <h2 style="color:red">Đăng xuất<h2>
+                                    </div>
+                                </a>
+                            </li>    
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-9">
                 <div class="right">
-
+                    <!-- database -->
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-    <script src="../js/admin.js"></script>
-    <script src="../../../vendors/js/jquery-3.6.0.js"></script>
-    <script src="../../../vendors/js/bootstrap.js"></script>
-</body>
-
-</html>
+<?php include"footer.php";?>

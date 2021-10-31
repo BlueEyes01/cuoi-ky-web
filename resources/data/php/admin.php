@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="vi">
+<?php
+        session_start();
+        if (isset($_SESSION['username']))
+        {
+            header('Location:admin_qltk.php');
+        }
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../vendors/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <title>Document</title>
-</head>
+<?php include"header.php"; ?>
 
 <body>
     <div class="all">
@@ -71,8 +68,7 @@
                             <div class="text-center">
                                 <h2 style="color : red">Đăng nhập nào admin</h2>
                             </div>
-
-                                <form action="" method="post">
+                                <form action="admin_submit.php" method="post">
                                     <div>
                                         <h5>Tên đăng nhập</h5>
                                         <input oninput="oip(this)" onblur="obl_tk(this)" onfocus="ofc(this)"
@@ -90,14 +86,17 @@
                                     </div>
                                 </form>
                         </div>
-                        <div class="tb-login alert alert-danger text-right dplnone" role="alert">
-                            Tên đăng nhập hoặc mật khẩu không chính xác !
-                        </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <?php 
+       if (isset($_SESSION['thongbao']))
+       {
+         echo $_SESSION['thongbao'];
+         unset($_SESSION['thongbao']);
+       }
+    ?>
 
     <script src="../js/admin.js"></script>
     <script src="../../../vendors/js/jquery-3.6.0.js"></script>

@@ -38,12 +38,15 @@ function obl_mk(x)
     let reg = /^\w[a-zA-Z0-9\_]{0,16}$/;
     (x.value.trim()==="")   ?     add_invalid(x,"Vui lòng nhập mật khẩu"):
     (!reg.test(x.value))    ?     add_invalid(x,"Mật khẩu không hợp lệ, tối đa 16 ký tự (có thể chứa chữ, số và ký tự _ )"): remove_invalid(x);
+    if (document.querySelector('#repassword').value.trim()!==""){
+        (document.querySelector('#repassword').value.trim()!== x.value.trim()) ? add_invalid(document.querySelector('#repassword'),"Mật khẩu không khớp") : remove_invalid(document.querySelector('#repassword'));
+    }
 }
 function obl_remk(x)
 {
     remove_animate(x);
     (x.value.trim()==="")   ?     add_invalid(x,"Vui lòng nhập lại mật khẩu"):
-    (document.querySelector('#password').value !== x.value) ? add_invalid(x,"Mật khẩu không khớp") : remove_invalid(x);
+    (document.querySelector('#password').value.trim() !== x.value.trim()) ? add_invalid(x,"Mật khẩu không khớp") : remove_invalid(x);
 }
 function oip(x)
 {
