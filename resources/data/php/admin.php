@@ -4,10 +4,10 @@
         {
             header('Location:admin_qltk.php');
         }
+        include"header.php"; 
 ?>
-
-<?php include"header.php"; ?>
-
+<title>Admin</title>
+</head>
 <body>
     <div class="all">
         <div class="row">
@@ -96,11 +96,5 @@
          echo $_SESSION['thongbao'];
          unset($_SESSION['thongbao']);
        }
+       include"footer.php";
     ?>
-
-    <script src="../js/admin.js"></script>
-    <script src="../../../vendors/js/jquery-3.6.0.js"></script>
-    <script src="../../../vendors/js/bootstrap.js"></script>
-</body>
-
-</html>

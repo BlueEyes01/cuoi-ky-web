@@ -1,4 +1,7 @@
 <?php include('header.php')  ?>
+<title>Sửa thông tin</title>
+</head>
+<body>
     <div class="all">
         <div class="row">
            <?php include"body.php"; ?>
@@ -18,6 +21,11 @@
             $phone = $row['phone'];
             $email = $row['email'];
             $conn->close();
+
+if (!isset($_SESSION['username']))
+{
+    header('Location:admin.php');
+}
 ?>
             <div class="col-9">
                 <div class="right">

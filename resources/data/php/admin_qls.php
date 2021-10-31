@@ -1,8 +1,10 @@
 <?php
-       include 'header.php';
+       include 'check_login.php';
 ?>
 <?php include"header.php"; ?>
-
+<title>Quản lý sách</title>
+</head>
+<body>
     <div class="all">
         <div class="row">
             <div class="col-3">

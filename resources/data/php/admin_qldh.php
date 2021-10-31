@@ -1,7 +1,9 @@
 <?php
 include"check_login.php";
+include 'header.php';
 ?>
-<?php include 'header.php';?>
+    <title>Quản lý đơn hàng</title>
+</head>
 <body>
     <div class="all">
         <div class="row">

@@ -1,4 +1,7 @@
 <?php  include"header.php" ;?>
+<title>Quản lý tài khoản</title>
+</head>
+<body>
     <div class="all">
         <div class="row">
           <?php include"body.php"; ?>
@@ -13,11 +16,7 @@
     </div>
 
     <?php
-        if (!isset($_SESSION['username']))
-        {
-            header('Location:admin.php');
-        }
-          if (isset($_SESSION['thongbao']))
+        if (isset($_SESSION['thongbao']))
           {
             echo $_SESSION['thongbao'];
             unset($_SESSION['thongbao']);

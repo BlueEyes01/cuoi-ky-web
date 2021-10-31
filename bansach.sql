@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2021 lúc 04:23 PM
+-- Thời gian đã tạo: Th10 31, 2021 lúc 12:10 PM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 7.3.28
 
@@ -43,22 +43,25 @@ CREATE TABLE `sach` (
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
   `username` varchar(16) NOT NULL,
-  `password` text NOT NULL,
+  `password` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `phone` varchar(16) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `name`, `phone`, `email`) VALUES
-(1, 'moon', 'e10adc3949ba59abbe56e057f20f883e', 'nguyễn văn a', '0869215201', 's2bluemoon01@hotmail.com'),
-(2, 'moon1', 'e10adc3949ba59abbe56e057f20f883e', 'nguyễn văn b', '08331146619', 's2ngochai01@hotmail.com'),
-(3, 'mon1', 'e10adc3949ba59abbe56e057f20f883e', 'cuong ga', '08331146619', 'sadas@gmail.com');
+INSERT INTO `user` (`username`, `password`, `name`, `phone`, `email`, `level`) VALUES
+('admin', '21232f297a57a5a743894a0e4a801fc3', 'Nguyễn Ngọc Hải', '0869215201', 's2ngochai01@hotmail.com', 1),
+('dung113', 'e10adc3949ba59abbe56e057f20f883e', 'Nguyễn Văn Dũng', '0113114115', 'dung113@gmail.com', 0),
+('moon1', 'e10adc3949ba59abbe56e057f20f883e', 'Nguyễn Ngọc Hải', '0869215201', 's2bluemoon01@gmail.com', 0),
+('moon2', 'c33367701511b4f6020ec61ded352059', 'Nguyễn Ngọc Hải', '0869215201', 's2bluemoon01@gmail.com', 0),
+('s2blueeyes01', '057b3b95df64e1680da1259ce1fb9b45', 'Nguyễn Ngọc Hải', '0869215201', 's2blueeyes01@gmail.com', 0),
+('s2bluemoon01', 'b914c18ff19cbdd31e6f020694e3546e', 'Nguyễn Ngọc Hải', '0869215201', 's2bluemoon02@gmail.com', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -74,7 +77,7 @@ ALTER TABLE `sach`
 -- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`,`username`);
+  ADD PRIMARY KEY (`username`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -85,12 +88,6 @@ ALTER TABLE `user`
 --
 ALTER TABLE `sach`
   MODIFY `masach` int(16) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

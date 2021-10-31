@@ -8,6 +8,3 @@
     <link rel="stylesheet" href="../../../vendors/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <title>Document</title>
-</head>
-<body>

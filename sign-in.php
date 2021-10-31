@@ -35,16 +35,8 @@
         session_start();
         if (isset($_SESSION['alert']))
         {
-            if ($_SESSION['alert']=='<script>alert("Bạn đã đăng ký thành công")</script>')
-            {
-                echo $_SESSION['alert'];
-                unset($_SESSION['alert']);
-            }
-            else
-            {
-                unset($_SESSION['alert']);
-            }
-            
+            echo $_SESSION['alert'];
+            unset($_SESSION['alert']);
         }
     ?>
 <?php include"footer.php"?>
