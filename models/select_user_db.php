@@ -18,7 +18,7 @@ echo'<table id = "table" class="table table-bordered border-danger">
       $result = $conn->query($sql);
       if ($result->num_rows > 0) 
       {
-      // output data of each row
+
         while($row = $result->fetch_assoc()) 
           {
             $stt = $row['stt'];
@@ -35,9 +35,10 @@ echo'<table id = "table" class="table table-bordered border-danger">
             <td style='cursor:pointer'>${name}</td>
             <td style='cursor:pointer'>${phone}</td>
             <td style='cursor:pointer'>${email}</td>
-            <td> <a style='text-decoration: none' href = '../../../views/layouts/admin/update_user.php?username=$username'><button type='button' class='btn btn-outline-warning' disabled >Sửa</button></a>
+            
+            <td><a class = 'dplnone' id ='sua' style='text-decoration: none' href = '../../../views/layouts/admin/update_user.php?username=$username'><button type='button' class='btn btn-outline-warning' disabled >Sửa</button></a>
 
-            <a style='text-decoration: none' href = '../../../models/delete_user_db.php?username=$username'><button type='button' class='btn btn-outline-danger'disabled>Xóa</button></a></td>
+            <a class = 'dplnone' id = 'xoa' style='text-decoration: none' href = '../../../models/delete_user_db.php?username=$username'><button type='button' class='btn btn-outline-danger'disabled>Xóa</button></a></td>
             </tr>";
           }
       } 

@@ -1,7 +1,4 @@
-<?php
-      include"../../../controllers/check_login.php";
-?>
-<?php  include"../../books/admin/header.php";  ?>
+<?php include"../../books/admin/header.php";  ?>
 <title>Quản lý sách</title>
 </head>
 <body>
@@ -57,7 +54,7 @@
             </div>
             <div class="col-9">
                 <div class="right">
-                    <!-- database -->
+                   <?php include '../../../models/select_sach_db.php'?>
                 </div>
             </div>
         </div>

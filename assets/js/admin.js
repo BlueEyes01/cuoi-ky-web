@@ -6,8 +6,25 @@ function clr(x)
         document.querySelectorAll('.colortb .btn')[1].disabled = true;
         document.querySelector('.colortb').classList.remove('colortb');
     }
-     x.querySelectorAll('.btn')[0].disabled = false;
-     x.querySelectorAll('.btn')[1].disabled = false;
+
+    if ( x.parentNode.querySelector('.dplshow-sua')!== null)
+    {
+        a= x.parentNode.querySelector('.dplshow-sua')
+        c= x.parentNode.querySelector('.dplshow-xoa')
+
+        a.classList.add('dplnone');
+        a.classList.remove('dplshow-sua');
+        c.classList.add('dplnone');
+        c.classList.remove('dplshow-xoa');
+    }
+
+    x.querySelectorAll('.btn')[0].disabled = false;
+    x.querySelectorAll('.btn')[1].disabled = false;
+
+    x.querySelector('#sua').classList.add('dplshow-sua');
+    x.querySelector('#sua').classList.remove('dplnone');
+    x.querySelector('#xoa').classList.add('dplshow-xoa');
+    x.querySelector('#xoa').classList.remove('dplnone');
 
     x.classList.add('colortb');
 }

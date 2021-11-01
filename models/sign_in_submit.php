@@ -1,5 +1,6 @@
 <?php 
     include("../configs/connectdb.php");
+    include("../controllers/check_login.php");
     $username = $_POST["username"];
     $password = $_POST["password"];
 
@@ -24,13 +25,14 @@
             }
             else
             {
-                echo "Tên đăng nhập hoặc mật khẩu không chính xác, vui lòng kiểm tra lại!";
-                 // header("Location:");
+                $_SESSION['alert'] ='<script>alert("Tên đăng nhập hoặc mật khẩu không chính xác")</script>';
+                 header("Location:../views/layouts/public/sign-in.php");
             }
         }
         else 
         {
             header("Location:../views/layouts/public/sign-in.php");
+            $_SESSION['alert'] ='<script>alert("Vui lòng kiểm tra lại thông tin")</script>';
         }
         $conn->close();
 ?>
