@@ -1,1 +1,0 @@
-<?php header('Location:resources/data/php/admin.php');?>
