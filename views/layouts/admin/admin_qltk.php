@@ -1,4 +1,5 @@
-<?php  include"../../books/admin/header.php";?>
+<?php include "../../../controllers/check_login.php";
+include"../../books/admin/header.php";?>
 <title>Quản lý tài khoản</title>
 </head>
 <body>

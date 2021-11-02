@@ -1,6 +1,6 @@
 <?php
         session_start();
-        if (isset($_SESSION['username']))
+        if (isset($_SESSION['admin']))
         {
             header('Location:admin_qltk.php');
         }
@@ -91,6 +91,7 @@
         </div>
     </div>
     <?php 
+ echo date("Y/m/d");
        if (isset($_SESSION['thongbao']))
        {
          echo $_SESSION['thongbao'];

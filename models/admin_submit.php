@@ -19,7 +19,7 @@
             if ($row = mysqli_fetch_array($user))
             {
                 $_SESSION['thongbao'] ='<script>alert("Bạn đã đăng nhập thành công")</script>';
-                $_SESSION['username'] = $username;
+                $_SESSION['admin'] = $username;
                 header("Location:../views/layouts/admin/admin_qltk.php");
             }
             else

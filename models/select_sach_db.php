@@ -1,6 +1,9 @@
 <?php 
 include"../../../configs/connectdb.php";
-include "../../../controllers/check_login.php";
+if (!isset($_SESSION['admin']))
+{
+    header('Location:../../../views/layouts/admin/admin.php');
+}
 
 echo'<table id = "table" class="table table-bordered border-danger">
       <thead>
@@ -12,6 +15,7 @@ echo'<table id = "table" class="table table-bordered border-danger">
           <th scope="col">Hình ảnh</th>
           <th scope="col">Mô tả</th>
           <th scope="col">Giá tiền</th>
+          <th scope="col">Ngày cập nhật</th>
           <th scope="col">Tùy chỉnh</th>
         </tr>
       </thead>';
@@ -30,6 +34,7 @@ echo'<table id = "table" class="table table-bordered border-danger">
             $mota = $row['mota'];
             $gia = $row['giatien'];
             $masach = $row['masach'];
+            $date = $row['ngaycapnhat'];
             
             echo "<tr onclick = 'clr(this)'>
             <td style='cursor:pointer'> ${stt}</td>
@@ -39,9 +44,11 @@ echo'<table id = "table" class="table table-bordered border-danger">
             <td style='cursor:pointer'><img src = '${img}' width = 200px ></td>
             <td style='cursor:pointer'>${mota}</td>
             <td style='cursor:pointer'>${gia}</td>
-            <td><a class = 'dplnone' id ='sua' style='text-decoration: none' href = '../../../views/layouts/admin/update_user.php?username=$masach'><button type='button' class='btn btn-outline-warning' disabled >Sửa</button></a>
+            <td style='cursor:pointer'>${date}</td>
 
-            <a class = 'dplnone' id = 'xoa' style='text-decoration: none' href = '../../../models/delete_user_db.php?username=$masach'><button type='button' class='btn btn-outline-danger'disabled>Xóa</button></a></td>
+            <td><a class = 'dplnone' id ='sua' style='text-decoration: none' href = '../../../views/layouts/admin/update_sach.php?masach=$masach'><button type='button' class='btn btn-outline-warning' disabled >Sửa</button></a>
+
+            <a class = 'dplnone' id = 'xoa' style='text-decoration: none' href = '../../../models/delete_sach_db.php?masach=$masach'><button type='button' class='btn btn-outline-danger'disabled>Xóa</button></a></td>
             </tr>";
           }
       } 

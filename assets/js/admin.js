@@ -89,10 +89,75 @@ function login_admin()
     },1000)
 }
 
-function dplnone()
+function dplnone(x)
 {
-    x = document.querySelectorAll('.dplnone1');
-    console.log(x);
-    x[0].classList.toggle('dplnone');
-    x[1].classList.toggle('dplnone');
+    a = document.querySelectorAll('.dplnone1');
+    if (x.checked==true)
+    {
+        a[0].classList.remove('dplnone');
+        a[1].classList.remove('dplnone');
+    }
+    else
+    {
+        a[0].classList.add('dplnone');
+        a[1].classList.add('dplnone');
+    }
+    
+}
+
+function obl_image(x) 
+{
+    remove_animate(x);
+    let reg = /[\`\[\]\'\(\)\|\{\}\"\<\>]/;
+    (x.value.trim()==="" )  ?   add_invalid(x,"Vui lòng nhập link hình ảnh"):
+    (reg.test(x.value)) ?   add_invalid(x,"Địa chỉ hình ảnh chứa ký tự không được phép"):    remove_invalid(x)
+    document.querySelector('#img').src = x.value;
+}
+function obl_tensach(x)
+{
+    remove_animate(x);
+    let reg = /[\`\~\#\^\*\{\}\<\>]/;
+    (x.value.trim()==="" )  ?   add_invalid(x,"Vui lòng nhập tên sách"):
+    (reg.test(x.value)) ?   add_invalid(x,"Tên sách chứa ký tự không hợp lệ"):    remove_invalid(x)
+}
+
+function obl_tacgia(x)
+{
+    remove_animate(x);
+    let reg = /[\`\-\=\[\]\;\,\.\/\!\~\@\#\$\%\^\*\(\)\+\|\{\}\:\"\<\>\?]/;
+    (x.value.trim()==="" )  ?   add_invalid(x,"Vui lòng nhập tác giả"):
+    (reg.test(x.value)) ?   add_invalid(x,"Tên tác giả chứa ký tự không hợp lệ"):    remove_invalid(x)
+}
+function obl_giatien(x)
+{
+    remove_animate(x);
+    let reg = /^[0-9]+$/;
+    (x.value.trim()==="" )  ?   add_invalid(x,"Vui lòng nhập giá tiền"):
+    (!reg.test(x.value) ) ?   add_invalid(x,"Giá tiền chứa chứa ký tự không hợp lệ"):    remove_invalid(x)
+}
+
+function obl_mota(x)
+{
+    remove_animate(x);
+    let reg = /[\`\=\[\]\~\@\#\%\*\+\|\{\}\<\>]/;
+    (x.value.trim()==="" )  ?   add_invalid(x,"Vui lòng nhập mô tả"):
+    (reg.test(x.value)) ?   add_invalid(x,"Mô tả chứa ký tự không hợp lệ"):    remove_invalid(x)
+}
+function obl_theloai(x)
+{
+    remove_animate(x);
+}
+
+function choose_file(x) 
+{
+        if(x.files)
+        {
+            var reader = new FileReader();
+            reader.onload = function(e) 
+            {
+                $('#link-img').attr('value',e.target.result);
+                $('#img').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(x.files[0])
+        }
 }

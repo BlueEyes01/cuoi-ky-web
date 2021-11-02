@@ -78,7 +78,7 @@ include"../../../controllers/check_login.php";
                                     <span class="form-message"></span>
                                 </div>
                                 <div class="checkbox-mk">
-                                    <p><input onchange="dplnone()" name ='checkbox' type = "checkbox">  Đổi mật khẩu</p>
+                                    <p><input onchange="dplnone(this)"  name ='checkbox' type = "checkbox">  Đổi mật khẩu</p>
                                 </div>
                                 <div>
                                     <button type="submit" name="submit" class="btn btn-update w-100 ">Sửa</button>

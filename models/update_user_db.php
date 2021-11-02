@@ -1,4 +1,5 @@
 <?php 
+include "../controllers/check_login.php";
 include("../configs/connectdb.php");
     $name = $_POST["name"];
     $phone = $_POST["phone"];
@@ -30,7 +31,8 @@ include("../configs/connectdb.php");
                     $password = md5($password);
                     $sql = "UPDATE user SET password = '$password', name = '$name', phone = '$phone', email = '$email' WHERE username ='${username}'";
                     mysqli_query($conn, $sql);
-                    $_POST['checkbox'];
+                    $_POST['checkbox']=0;
+                    $_SESSION['thongbao'] ='<script>alert("Cập nhật thông tin thành công")</script>';
                     header('Location:../views/layouts/admin/admin_qltk.php');
                 }
             }
@@ -40,14 +42,16 @@ include("../configs/connectdb.php");
                 {
                     $sql = "UPDATE user SET name = '$name', phone = '$phone', email = '$email' WHERE username ='${username}'";
                     mysqli_query($conn, $sql);
-                    $_POST['checkbox'];
+                    $_POST['checkbox']=0;
+                    $_SESSION['thongbao'] ='<script>alert("Cập nhật thông tin thành công")</script>';
                     header('Location:../views/layouts/admin/admin_qltk.php');
                 }
             }
         }
         else 
         { 
-            $_POST['checkbox'];
+            $_POST['checkbox']=0;
+            $_SESSION['thongbao'] ='<script>alert("Vui lòng kiểm tra lại thông tin")</script>';
             header('Location:../views/layouts/admin/update_user.php');
         }
 

@@ -1,6 +1,9 @@
 <?php 
 include"../../../configs/connectdb.php";
-include "../../../controllers/check_login.php";
+if (!isset($_SESSION['admin']))
+{
+    header('Location:../../../views/layouts/admin/admin.php');
+}
 
 echo'<table id = "table" class="table table-bordered border-danger">
       <thead>

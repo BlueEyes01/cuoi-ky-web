@@ -76,25 +76,3 @@ function obl_email(x)
     (!reg.test(x.value)) ?   add_invalid(x,"email không hợp lệ"):    remove_invalid(x)
 }
 
-// function onsm()
-// {
-//     x = document.querySelector('input[name = username]');
-//     y = document.querySelector('input[name = password]');
-//     obl_tk(x);
-//     obl_mk(y);
-
-//     let reg = /^\w[a-zA-Z0-9\_]{0,16}$/;
-//     if(x.value.trim()===""||y.value.trim()===""||!reg.test(x.value)||!reg.test(y.value))
-//     {
-//         login_admin();
-//     }
-// }
-
-// function login_admin()
-// {
-//     document.querySelector('.sign-in').classList.remove('animate__bounceInDown');
-//     document.querySelector('.sign-in').classList.add('animate__shakeX');
-//     setTimeout(function(){
-//         document.querySelector('.sign-in').classList.remove('animate__shakeX');
-//     },1000)
-// }
