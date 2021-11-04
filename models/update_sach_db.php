@@ -1,21 +1,30 @@
 <?php 
 include "../controllers/check_login.php";
 include("../configs/connectdb.php");
-    $masach = $_POST["masach"];
-    $tensach = $_POST["tensach"];
-    $tacgia = $_POST["tacgia"];
-    $theloai = $_POST["theloai"];
-    $giatien = $_POST["giatien"];
-    $image = $_POST["image"];
-    $mota = $_POST["mota"];
-    $date = date("Y-m-d");
+include("fixSqlInject.php");
+    $masach = trim($_POST["masach"]);
+    $tensach = trim($_POST["tensach"]);
+    $tacgia = trim($_POST["tacgia"]);
+    $theloai = trim($_POST["theloai"]);
+    $giatien = trim($_POST["giatien"]);
+    $image = trim($_POST["image"]);
+    $mota = trim($_POST["mota"]);
 
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $date = date('Y-m-d H:i:s');
+
+
+    $mota= fixSqlInject($mota);
+    $tensach= fixSqlInject($tensach);
+    $tacgia= fixSqlInject($tacgia);
+    $theloai= fixSqlInject($theloai);
+    $date= fixSqlInject($date);
 
 
     $reg_img = '/[\`\[\]\'\(\)\|\{\}\"\<\>]/';
-    $reg_tacgia = '/[\`\-\=\[\]\;\,\.\/\!\~\@\#\$\%\^\*\(\)\+\|\{\}\:\"\<\>\?]/';
+    $reg_tacgia = '/[\`\-\=\[\]\~\@\#\$\%\^\*\(\)\{\}\?]/';
     $reg_giatien = '/^[0-9]+$/';
-    $reg_mota = '/[\`\=\[\]\~\@\#\%\*\+\|\{\}\<\>]/';
+    $reg_mota = '/[\`\=\[\]\~\@\#\%\*\{\}\<\>]/';
     $reg_tensach = '/[\`\~\#\^\*\{\}\<\>]/';
     $reg_masach = '/^[0-9]+$/';
 

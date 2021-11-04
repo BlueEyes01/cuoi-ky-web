@@ -1,8 +1,12 @@
 <?php 
     include("../configs/connectdb.php");
     include("../controllers/check_login.php");
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    include"fixSqlInject.php";
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+
+    $password= fixSqlInject($password);
+    $username= fixSqlInject($username);
 
     $reg = '/^\w[a-zA-Z0-9\_]{0,16}$/';
 

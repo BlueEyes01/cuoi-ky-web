@@ -108,7 +108,7 @@ function dplnone(x)
 function obl_image(x) 
 {
     remove_animate(x);
-    let reg = /[\`\[\]\'\(\)\|\{\}\"\<\>]/;
+    let reg = /[\`\[\]\(\)\|\{\}\"\<\>]/;
     (x.value.trim()==="" )  ?   add_invalid(x,"Vui lòng nhập link hình ảnh"):
     (reg.test(x.value)) ?   add_invalid(x,"Địa chỉ hình ảnh chứa ký tự không được phép"):    remove_invalid(x)
     document.querySelector('#img').src = x.value;
@@ -124,7 +124,7 @@ function obl_tensach(x)
 function obl_tacgia(x)
 {
     remove_animate(x);
-    let reg = /[\`\-\=\[\]\;\,\.\/\!\~\@\#\$\%\^\*\(\)\+\|\{\}\:\"\<\>\?]/;
+    let reg = /[\`\-\=\[\]\~\@\#\$\%\^\*\(\)\{\}\?]/;
     (x.value.trim()==="" )  ?   add_invalid(x,"Vui lòng nhập tác giả"):
     (reg.test(x.value)) ?   add_invalid(x,"Tên tác giả chứa ký tự không hợp lệ"):    remove_invalid(x)
 }

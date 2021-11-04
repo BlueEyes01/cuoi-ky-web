@@ -71,7 +71,7 @@ include"../../../controllers/check_login.php";
                                     <h5>Thể loại</h5>
 
                                     <select class="form-select form-control"  name="theloai" aria-label="theloai">
-                                    <option selected disabled><?php echo $theloai;  ?></option>
+                                    <option selected value ="<?php echo $theloai;  ?>" ><?php echo $theloai;  ?></option>
                                     <option value="Kinh Tế">Kinh Tế</option>
                                     <option value="Tâm Lý">Tâm Lý</option>
                                     <option value="Văn Học Việt Nam">Văn Học Việt Nam</option>

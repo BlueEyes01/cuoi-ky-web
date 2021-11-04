@@ -23,7 +23,6 @@ echo'<table id = "table" class="table table-bordered border-danger">
       $result = $conn->query($sql);
       if ($result->num_rows > 0) 
       {
-
         while($row = $result->fetch_assoc()) 
           {
             $stt = $row['stt'];
@@ -35,7 +34,7 @@ echo'<table id = "table" class="table table-bordered border-danger">
             $gia = $row['giatien'];
             $masach = $row['masach'];
             $date = $row['ngaycapnhat'];
-            
+
             echo "<tr onclick = 'clr(this)'>
             <td style='cursor:pointer'> ${stt}</td>
             <td style='cursor:pointer'>${tensach}</td>

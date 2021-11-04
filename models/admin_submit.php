@@ -1,8 +1,8 @@
 <?php 
     include("../configs/connectdb.php");
     session_start();
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
 
     $reg = '/^\w[a-zA-Z0-9\_]{0,16}$/';
 

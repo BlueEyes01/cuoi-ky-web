@@ -1,13 +1,21 @@
 <?php 
 
 include("../configs/connectdb.php");
+include("fixSqlInject.php");
     session_start();
-    $name = $_POST["name"];
-    $phone = $_POST["phone"];
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $repassword = $_POST["repassword"];
-    $email = $_POST["email"];
+    $name = trim($_POST["name"]);
+    $phone = trim($_POST["phone"]);
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+    $repassword = trim($_POST["repassword"]);
+    $email = trim($_POST["email"]);
+
+    $name= fixSqlInject($name);
+    $phone= fixSqlInject($phone);
+    $password= fixSqlInject($password);
+    $repassword= fixSqlInject($repassword);
+    $email= fixSqlInject($email);
+    $username= fixSqlInject($username);
 
     $reg = '/^\w[a-zA-Z0-9\_]{0,16}$/';
     $reg_ht ='/[\`\-\=\[\]\;\'\,\.\/\!\~\@\#\$\%\^\&\*\(\)\+\|\{\}\:\"\<\>\?]/';
