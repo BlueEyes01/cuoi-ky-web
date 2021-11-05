@@ -27,8 +27,8 @@ include"../../../controllers/check_login.php";
     }
 
 ?>
-            <div class="col-9">
-                <div class="right">
+            <div class="col-12 col-sm-12 col-xxl-9">
+                <div class="right" style="min-width: 600px ;min-height: 890px">
                     <div class=" text-center  animate__animated animate__pulse animate__infinite animate__slow" role="alert">
                             <h2 style="color:blueviolet">Cuộc đời ta thay đổi theo hai cách: <br>Qua những người ta gặp và qua những cuốn sách ta đọc.<h2>
                     </div>

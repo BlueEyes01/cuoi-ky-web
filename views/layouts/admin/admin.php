@@ -11,8 +11,8 @@
 <body>
     <div class="all">
         <div class="row">
-            <div class="col-3">
-                <div class="left">
+            <div class="col-12 col-sm-12 col-xxl-3">
+                <div class="left"  style="min-width: 215px">
                     <div class="alert alert-info animate__animated animate__pulse animate__infinite animate__slow"
                         role="alert">
                         <h2 style="color:red">Hi Admin ♥-♥<h2>
@@ -53,8 +53,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-9">
-                <div class="right ">
+            <div class="col-12 col-sm-12 col-xxl-9">
+                <div class="right " style="min-width: 480px ;min-height: 890px">
                     <div class=" text-center  animate__animated animate__pulse animate__infinite animate__slow"
                         role="alert">
                         <h2 style="color:blueviolet">Cuộc đời ta thay đổi theo hai cách: <br>Qua những người ta gặp và
@@ -91,7 +91,6 @@
         </div>
     </div>
     <?php 
- echo date("Y/m/d");
        if (isset($_SESSION['thongbao']))
        {
          echo $_SESSION['thongbao'];

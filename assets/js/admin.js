@@ -53,6 +53,9 @@ function obl_mk(x)
     let reg = /^\w[a-zA-Z0-9\_]{0,16}$/;
     (x.value.trim()==="")   ?     add_invalid(x,"Vui lòng nhập mật khẩu"):
     (!reg.test(x.value))    ?     add_invalid(x,"Mật khẩu không hợp lệ, tối đa 16 ký tự (có thể chứa chữ, số và ký tự _ )"): remove_invalid(x);
+    if (document.querySelector('#repassword').value.trim()!==""){
+        (document.querySelector('#repassword').value.trim()!== x.value.trim()) ? add_invalid(document.querySelector('#repassword'),"Mật khẩu không khớp") : remove_invalid(document.querySelector('#repassword'));
+    }
 }
 function oip(x)
 {
@@ -160,4 +163,26 @@ function choose_file(x)
             }
             reader.readAsDataURL(x.files[0])
         }
+}
+
+function clr_dh(x)
+{
+    if(document.querySelector('.colortb')!== null) 
+    {
+        document.querySelector('.colortb .btn').disabled = true;
+        document.querySelector('.colortb').classList.remove('colortb');
+    }
+
+    if ( x.parentNode.querySelector('.dplshow')!== null)
+    {
+        a= x.parentNode.querySelector('.dplshow')
+        a.classList.add('dplnone');
+        a.classList.remove('dplshow');
+    }
+
+    x.querySelector('.btn').disabled = false;
+
+    x.querySelector('#sua').classList.add('dplshow');
+    x.querySelector('#sua').classList.remove('dplnone');
+    x.classList.add('colortb');
 }

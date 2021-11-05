@@ -34,15 +34,32 @@ else
 
     while($row = $result->fetch_assoc()) 
       {
-        $stt = $row['stt'];
-        $tensach = $row['tensach'];
-        $tacgia = $row['tacgia'];
-        $theloai = $row['theloai'];
-        $img = $row['image'];
-        $mota = $row['mota'];
-        $gia = $row['giatien'];
-        $masach = $row['masach'];
-        $date = $row['ngaycapnhat'];
+        if($search =="")
+        {
+          $stt = $row['stt'];
+          $tensach = $row['tensach'];
+          $tacgia = $row['tacgia'];
+          $theloai = $row['theloai'];
+          $img = $row['image'];
+          $mota = $row['mota'];
+          $gia = $row['giatien'];
+          $masach = $row['masach'];
+          $date = $row['ngaycapnhat'];
+  
+          $gia = number_format($gia);
+        }
+        else
+        {
+          $stt = $row['stt'];
+          $tensach = str_replace($search,"<span style='color:red'>${search}</span>",$row['tensach']);
+          $tacgia = str_replace($search,"<span style='color:red'>${search}</span>",$row['tacgia']);
+          $theloai = str_replace($search,"<span style='color:red'>${search}</span>",$row['theloai']);
+          $img = $row['image'];
+          $mota = $row['mota'];
+          $gia = str_replace($search,"<span style='color:red'>${search}</span>",$row['giatien']);
+          $masach = $row['masach'];
+          $date = str_replace($search,"<span style='color:red'>${search}</span>",$row['ngaycapnhat']);
+        }
 
         echo "<tr onclick = 'clr(this)'>
         <td style='cursor:pointer'> ${stt}</td>
@@ -50,13 +67,13 @@ else
         <td style='cursor:pointer'>${tacgia}</td>
         <td style='cursor:pointer'>${theloai}</td>
         <td style='cursor:pointer'><img src = '${img}' width = 200px ></td>
-        <td style='cursor:pointer'>${mota}</td>
-        <td style='cursor:pointer'>${gia}</td>
+        <td style='cursor:pointer'><textarea  style='border-radius: 5px' cols = '40' rows = '15' readonly>${mota}</textarea></td>
+        <td style='cursor:pointer'>${gia} VNĐ</td>
         <td style='cursor:pointer'>${date}</td>
 
-        <td><a class = 'dplnone' id ='sua' style='text-decoration: none' href = '../../../views/layouts/admin/update_sach.php?masach=$masach'><button type='button' class='btn btn-outline-warning' disabled >Sửa</button></a>
+        <td><a class = 'dplnone' id ='sua' style='text-decoration: none' href = '../../../views/layouts/admin/update_sach.php?masach=$masach'><button type='button' class='btn btn-outline-warning' style='margin:5px' disabled >Sửa</button></a>
 
-        <a class = 'dplnone' id = 'xoa' style='text-decoration: none' href = '../../../models/delete_sach_db.php?masach=$masach'><button type='button' class='btn btn-outline-danger'disabled>Xóa</button></a></td>
+        <a class = 'dplnone' id = 'xoa' style='text-decoration: none' href = '../../../models/delete_sach_db.php?masach=$masach'><button type='button' class='btn btn-outline-danger' style='margin:5px'disabled>Xóa</button></a></td>
         </tr>";
       }
   } 

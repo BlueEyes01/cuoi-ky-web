@@ -1,5 +1,5 @@
-<div class="col-3">
-    <div class="left">
+<div class="col-12 col-sm-12 col-xxl-3">
+    <div class="left" style="min-width: 215px">
         <div class="alert alert-info animate__animated animate__pulse animate__infinite animate__slow" role="alert">
             <h2 style="color:red">Hi Admin ♥-♥<h2>
         </div>

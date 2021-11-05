@@ -9,6 +9,9 @@ include("fixSqlInject.php");
     $password = trim($_POST["password"]);
     $repassword = trim($_POST["repassword"]);
     $email = trim($_POST["email"]);
+    
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $date = date('Y-m-d H:i:s');
 
     $name= fixSqlInject($name);
     $phone= fixSqlInject($phone);
@@ -47,7 +50,7 @@ include("fixSqlInject.php");
         else
         {
             $password = md5($password);
-            $sql = "INSERT INTO user VALUES ('$username', '$password', '$name', '$phone', '$email', 0)";
+            $sql = "INSERT INTO user VALUES ('$username', '$password', '$name', '$phone', '$email', 0, '$date')";
             mysqli_query($conn, $sql);
             $_SESSION['alert'] ='<script>alert("Bạn đã đăng ký thành công")</script>';
             header("Location:../views/layouts/public/sign-in.php");
