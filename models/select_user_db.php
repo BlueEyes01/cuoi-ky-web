@@ -21,10 +21,11 @@ echo'<table id = "table" class="table table-bordered border-danger">
           <th scope="col">Họ tên</th>
           <th scope="col">Số điện thoại</th>
           <th scope="col">Email</th>
+          <th scope="col">Ngày tạo</th>
           <th scope="col">Tùy chỉnh</th>
         </tr>
       </thead>';
-      $sql = "SELECT @row := @row + 1 AS stt, t.* FROM user t, (SELECT @row := 0) r WHERE (level = 0) AND (username LIKE '%$search%' OR name LIKE '%$search%' OR phone LIKE '%$search%' OR email LIKE '%$search%' ) ";
+      $sql = "SELECT @row := @row + 1 AS stt, t.* FROM user t, (SELECT @row := 0) r WHERE (level = 0) AND (username LIKE BINARY '%$search%' OR name LIKE BINARY '%$search%' OR phone LIKE BINARY '%$search%' OR email LIKE BINARY '%$search%' OR ngaytao LIKE BINARY '%$search%' ) ";
       $result = $conn->query($sql);
       if ($result->num_rows > 0) 
       {
@@ -39,6 +40,7 @@ echo'<table id = "table" class="table table-bordered border-danger">
               $name = $row['name'];
               $phone = $row['phone'];
               $email = $row['email'];
+              $date = $row['ngaytao'];
             }
             else 
             {
@@ -48,6 +50,7 @@ echo'<table id = "table" class="table table-bordered border-danger">
               $name = str_replace($search,"<span style='color:red'>${search}</span>",$row['name']);
               $phone = str_replace($search,"<span style='color:red'>${search}</span>",$row['phone']);
               $email = str_replace($search,"<span style='color:red'>${search}</span>",$row['email']);
+              $date = str_replace($search,"<span style='color:red'>${search}</span>",$row['ngaytao']);
             }
 
             echo "<tr onclick = 'clr(this)'>
@@ -57,6 +60,7 @@ echo'<table id = "table" class="table table-bordered border-danger">
             <td style='cursor:pointer'>${name}</td>
             <td style='cursor:pointer'>${phone}</td>
             <td style='cursor:pointer'>${email}</td>
+            <td style='cursor:pointer'>${date}</td>
             
             <td><a class = 'dplnone' id ='sua' style='text-decoration: none' href = '../../../views/layouts/admin/update_user.php?username=$username'><button style='margin:5px' type='button' class='btn btn-outline-warning' disabled >Sửa</button></a>
 

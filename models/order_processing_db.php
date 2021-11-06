@@ -32,7 +32,7 @@ if(isset ($_GET['id']))
       <th scope="col">Tổng tiền</th>
     </tr>
   </thead>';
-  $sql = "SELECT * FROM  order_details INNER JOIN sach ON order_details.masach = sach.masach  WHERE order_id =$id";
+  $sql = "SELECT * FROM  order_details INNER JOIN sach ON order_details.masach = sach.masach  WHERE order_id =$id ORDER BY id DESC";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) 
   {
@@ -65,18 +65,7 @@ if(isset ($_GET['id']))
   }
   echo "</table>";
   
-  if($row['trangthai']==0)
-        {
-            $trangthai = 'Chờ xác nhận';
-        }
-        else if($row['trangthai']==1)
-        {
-            $trangthai = 'Bị từ chối';
-        }
-        else if($row['trangthai']==2)
-        {
-            $trangthai='Đã xác nhận';
-        }
+      
         $sql = "SELECT  * FROM  orders  WHERE id =$id";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) 
@@ -90,6 +79,21 @@ if(isset ($_GET['id']))
           $tongtien = $row['tongtien'];
           $tongtien = number_format($tongtien);
           $username = $row['username'];
+          $trangthai = $row['trangthai'];
+
+          if($row['trangthai']==0)
+        {
+            $trangthai = 'Chờ xác nhận';
+        }
+        else if($row['trangthai']==1)
+        {
+            $trangthai = 'Bị từ chối';
+        }
+        else if($row['trangthai']==2)
+        {
+            $trangthai='Đã xác nhận';
+        }
+        
         }
 }
   else

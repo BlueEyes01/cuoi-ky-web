@@ -34,10 +34,10 @@ include"../../books/admin/header.php";
                                     <h5 style = "color:red">Tổng tiền: <?php echo $tongtien?> VNĐ</h5>
                                     <h5 style = "color:red">Trạng thái: <?php echo $trangthai?></h5>
                                     <div class = "text-center" style = "margin-top:10px">
-                                    <a href = "../../../models/admin_order_processing_db.php?trangthai=2" style="text-decoration: none">
+                                    <a href = "../../../models/admin_order_processing_db.php?trangthai=2&id=<?php echo $id ?>" style="text-decoration: none">
                                     <button type="button" class="btn btn-outline-success" style = "margin-right:5px">Xác nhận</button>
                                     </a>
-                                    <a href = "../../../models/admin_order_processing_db.php?trangthai=1" style="text-decoration: none">
+                                    <a href = "../../../models/admin_order_processing_db.php?trangthai=1&id=<?php echo $id ?>" style="text-decoration: none">
                                     <button type="button" class="btn btn-outline-danger" style = "margin-left:5px">Từ chối</button>
                                     </a>
                                     </div>

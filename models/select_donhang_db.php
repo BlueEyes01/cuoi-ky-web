@@ -29,7 +29,7 @@ else
       <th scope="col">Tùy chỉnh</th>
     </tr>
   </thead>';
-  $sql = "SELECT @row := @row + 1 AS stt, t.* FROM orders t, (SELECT @row := 0) r WHERE id LIKE '%$search%' OR hoten like '%$search%' OR email like '%$search%' OR phone like '%$search%' OR diachi like '%$search%' OR note like '%$search%' OR order_date like '%$search%' OR tongtien LIKE'%$search%'";
+  $sql = "SELECT @row := @row + 1 AS stt, t.* FROM orders t, (SELECT @row := 0) r WHERE id LIKE BINARY '%$search%' OR hoten LIKE BINARY '%$search%' OR email LIKE BINARY '%$search%' OR phone LIKE BINARY '%$search%' OR diachi LIKE BINARY '%$search%' OR note LIKE BINARY '%$search%' OR order_date LIKE BINARY '%$search%' OR tongtien LIKE BINARY'%$search%' ORDER BY id DESC";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) 
   {

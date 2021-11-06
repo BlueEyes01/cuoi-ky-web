@@ -27,7 +27,7 @@ else
       <th scope="col">Tùy chỉnh</th>
     </tr>
   </thead>';
-  $sql = "SELECT @row := @row + 1 AS stt, t.* FROM sach t, (SELECT @row := 0) r WHERE tensach LIKE '%$search%' OR tacgia like '%$search%' OR theloai like '%$search%' OR mota like '%$search%' OR giatien like '%$search%' OR ngaycapnhat like '%$search%'";
+  $sql = "SELECT @row := @row + 1 AS stt, t.* FROM sach t, (SELECT @row := 0) r WHERE tensach LIKE BINARY '%$search%' OR tacgia LIKE BINARY '%$search%' OR theloai LIKE BINARY '%$search%' OR mota LIKE BINARY '%$search%' OR giatien LIKE BINARY '%$search%' OR ngaycapnhat LIKE BINARY '%$search%' ORDER BY masach DESC";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) 
   {
@@ -55,7 +55,7 @@ else
           $tacgia = str_replace($search,"<span style='color:red'>${search}</span>",$row['tacgia']);
           $theloai = str_replace($search,"<span style='color:red'>${search}</span>",$row['theloai']);
           $img = $row['image'];
-          $mota = $row['mota'];
+          $mota = str_replace($search,"<span style='color:red'>${search}</span>",$row['mota']);
           $gia = str_replace($search,"<span style='color:red'>${search}</span>",$row['giatien']);
           $masach = $row['masach'];
           $date = str_replace($search,"<span style='color:red'>${search}</span>",$row['ngaycapnhat']);
@@ -67,7 +67,7 @@ else
         <td style='cursor:pointer'>${tacgia}</td>
         <td style='cursor:pointer'>${theloai}</td>
         <td style='cursor:pointer'><img src = '${img}' width = 200px ></td>
-        <td style='cursor:pointer'><textarea  style='border-radius: 5px' cols = '40' rows = '15' readonly>${mota}</textarea></td>
+        <td style='cursor:pointer'>${mota}</td>
         <td style='cursor:pointer'>${gia} VNĐ</td>
         <td style='cursor:pointer'>${date}</td>
 
