@@ -63,11 +63,10 @@ include"../../books/admin/header.php";  ?>
                                 
                                 <div class="col-6">
                                     <h5>Hình ảnh</h5>
-                                    <input oninput="oip(this)" onblur="obl_image(this)" onfocus="ofc(this)" name="image"class="form-control" type="text" id="link-img"><br>
-                                    <input class="form-control" onchange ="choose_file(this)" type = 'file'accept ="image/jpg image/jpeg image/png image/gif" >
+                                    <input oninput="oip(this)" onblur="obl_image(this)" onfocus="ofc(this)" name="image"class="form-control" type="text" id="link-img">
                                     <span class="form-message"></span>
                                     <div class = "text-center">
-                                        <img id ='img' style = "padding-top:10px"  alt = "Vui lòng kiểm tra lại link ảnh" height = 320px  src = "../../../assets/images/999.png">
+                                        <img id ='img' style = "padding-top:10px"  alt = "Vui lòng kiểm tra lại link ảnh" height = 350px  src = "../../../assets/images/999.png">
                                     </div>                             
                                 </div>
                                 

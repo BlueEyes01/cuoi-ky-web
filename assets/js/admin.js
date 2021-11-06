@@ -151,20 +151,6 @@ function obl_theloai(x)
     remove_animate(x);
 }
 
-function choose_file(x) 
-{
-        if(x.files)
-        {
-            var reader = new FileReader();
-            reader.onload = function(e) 
-            {
-                $('#link-img').attr('value',e.target.result);
-                $('#img').attr('src',e.target.result);
-            }
-            reader.readAsDataURL(x.files[0])
-        }
-}
-
 function clr_dh(x)
 {
     if(document.querySelector('.colortb')!== null) 
