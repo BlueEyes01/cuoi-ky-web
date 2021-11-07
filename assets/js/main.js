@@ -56,7 +56,7 @@ function oip(x)
 function obl_hoten(x)
 {
     remove_animate(x);
-    let reg = /[\`\-\=\[\]\;\'\,\.\/\!\~\@\#\$\%\^\&\*\(\)\+\|\{\}\:\"\<\>\?]/;
+    let reg = /[\`\=\[\]\;\'\/\!\~\@\#\$\%\^\&\*\(\)\+\|\{\}\:\"\<\>\?]/;
     (x.value.trim()==="" )  ?   add_invalid(x,"Vui lòng nhập họ và tên"):
     (reg.test(x.value)) ?   add_invalid(x,"Họ tên chứa ký tự không hợp lệ"):    remove_invalid(x)
 }
