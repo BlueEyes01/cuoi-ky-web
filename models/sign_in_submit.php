@@ -23,9 +23,9 @@
             $user = mysqli_query($conn,$sql);
             if ($row = mysqli_fetch_array($user))
             {
-                echo"Hello ".$row['name']."<br>Bạn đã đăng nhập thành công";
+                // echo"Hello ".$row['name']."<br>Bạn đã đăng nhập thành công";
                 //add trang chu ban sach
-                // header("Location:");
+                 header("Location:../views/layouts/public/index.php");
             }
             else
             {
@@ -39,4 +39,6 @@
             $_SESSION['alert'] ='<script>alert("Vui lòng kiểm tra lại thông tin")</script>';
         }
         $conn->close();
+        $_SESSION['taikhoan'] = $username;
+        
 ?>

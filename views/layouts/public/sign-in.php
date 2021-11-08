@@ -38,5 +38,6 @@
             echo $_SESSION['alert'];
             unset($_SESSION['alert']);
         }
+        
     ?>
 <?php include"../../books/public/footer.php"?>

@@ -32,7 +32,7 @@ if(isset ($_GET['id']))
       <th scope="col">Tổng tiền</th>
     </tr>
   </thead>';
-  $sql = "SELECT * FROM  order_details INNER JOIN sach ON order_details.masach = sach.masach  WHERE order_id =$id ORDER BY id DESC";
+  $sql = "SELECT order_details.masach,tensach,image,soluong,order_details.giatien FROM  order_details INNER JOIN sach ON order_details.masach = sach.masach  WHERE order_id =$id ORDER BY id DESC";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) 
   {

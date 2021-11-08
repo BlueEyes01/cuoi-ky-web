@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 06, 2021 lúc 04:10 PM
--- Phiên bản máy phục vụ: 10.4.19-MariaDB
--- Phiên bản PHP: 7.3.28
+-- Thời gian đã tạo: Th10 08, 2021 lúc 09:41 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `username`, `hoten`, `email`, `phone`, `diachi`, `note`, `order_date`, `trangthai`, `tongtien`) VALUES
 (1, 's2bluemoon01', 'Hải', 'hai123@hotmail.com', '0869215201', 'hà nội', 'Ông Thaler cũng đặt ra thuật ngữ \"cú hích\" aaaaaaaaaaaaaaaa(nudge), ý chỉ các tác động cần thiết để giúp con người vượt qua định kiến, loại bỏ thói quen làm theo người khác để tránh phạm lầm ngớ ngẩn khi phải đưa ra quyết định.\r\n\r\na bước vđược ban tặng.', '2021-11-05 17:26:59', 2, 198000),
-(2, 's2blueeyes01', 'tú', 'tubi123@gmail.com', '0833146619', 'hoài đức', 'tú bí test', '2021-11-05 17:28:02', 1, 100000);
+(2, 's2blueeyes01', 'tú', 'tubi123@gmail.com', '0833146619', 'hoài đức', 'tú bí test', '2021-11-05 17:28:02', 1, 100000),
+(3, 'moon1', 'Lan', 'lan123@gmail.com', '0869215201', 'Đông Anh', 'test', '2021-11-08 09:30:58', 0, 100000);
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,9 @@ INSERT INTO `order_details` (`id`, `order_id`, `masach`, `giatien`, `soluong`, `
 (1, 1, 25, 50000, 2, 100000),
 (2, 1, 43, 49000, 2, 98000),
 (3, 2, 26, 99000, 1, 99000),
-(4, 2, 26, 99000, 1, 99000);
+(4, 2, 26, 99000, 1, 99000),
+(5, 3, 72, 50000, 1, 50000),
+(6, 3, 25, 25000, 2, 50000);
 
 -- --------------------------------------------------------
 
@@ -84,7 +87,7 @@ CREATE TABLE `sach` (
   `tensach` varchar(255) NOT NULL,
   `tacgia` varchar(255) NOT NULL,
   `theloai` varchar(255) NOT NULL,
-  `image` text NOT NULL,
+  `image` mediumtext NOT NULL,
   `mota` text NOT NULL,
   `giatien` int(20) NOT NULL,
   `ngaycapnhat` datetime NOT NULL
@@ -219,19 +222,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `sach`
 --
 ALTER TABLE `sach`
-  MODIFY `masach` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `masach` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

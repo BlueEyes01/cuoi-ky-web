@@ -75,4 +75,3 @@ function obl_email(x)
     (x.value.trim()==="" )  ?   add_invalid(x,"Vui lòng nhập email"):
     (!reg.test(x.value)) ?   add_invalid(x,"email không hợp lệ"):    remove_invalid(x)
 }
-

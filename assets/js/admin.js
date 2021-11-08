@@ -28,7 +28,6 @@ function clr(x)
 
     x.classList.add('colortb');
 }
-
 function m_over(x) 
 {
     x.classList.remove('animate__pulse', 'animate__repeat-2', 'animate__slow');
@@ -171,4 +170,17 @@ function clr_dh(x)
     x.querySelector('#sua').classList.add('dplshow');
     x.querySelector('#sua').classList.remove('dplnone');
     x.classList.add('colortb');
+}
+function choose_file(x) 
+{
+        if(x.files)
+        {
+            var reader = new FileReader();
+            reader.onload = function(e) 
+            {
+                $('#link-img').attr('value',e.target.result);
+                $('#img').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(x.files[0])
+        }
 }

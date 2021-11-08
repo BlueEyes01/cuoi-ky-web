@@ -109,8 +109,9 @@ include"../../../controllers/check_login.php";
                                 </div>
 
                                 <div class="col-6 text-center">
+                                <input class="form-control" onchange ="choose_file(this)" type = 'file'accept ="image/jpg image/jpeg image/png image/gif" >
                                     <div> 
-                                            <img id ='img' style = "padding-top:10px"  alt = "Vui lòng kiểm tra lại link ảnh" height = 350px src ='<?php echo $image?>'>
+                                            <img id ='img' style = "padding-top:10px"  alt = "Vui lòng kiểm tra lại link ảnh" height = 320px src ='<?php echo $image?>'>
                                     </div>
                                     <div>
                                         <button type="submit" name="submit" class="btn btn-update w-100 ">Sửa</button>
